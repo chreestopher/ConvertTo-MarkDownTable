@@ -1,3 +1,13 @@
+    $proc = get-process 
+    
+    $proc | select Name, Handles, Npm -First 3| convertto-markdownTable -includeOpen -allColumnsAllignment Left
+    
+    $proc | select Name, Handles, Npm -First 3| convertto-markdownTable -allColumnsAllignment Center
+    
+    $proc | select Name, Handles, Npm -First 3 | convertto-markdownTable -includeOpen -columnAlignment @{Handles="Right"} 
+    
+    $proc | select Name, Handles, Npm -First 3 | convertto-markdownTable -columnAlignment @{NPM="Center"}   
+
 
 
 |Name                |Handles             |NPM                 |
